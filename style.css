@@ -1,66 +1,64 @@
 body {
     color: #fff;
     font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
-  }
+}
 
+html {
+    height: 100%;
+}
 
-  html {
-    height:100%;
-  }
-  
-  body {
-    margin:0;
-  }
-  
-  .bg {
-    animation:slide 3s ease-in-out infinite alternate;
+body {
+    margin: 0;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
     background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
-  }
-  
-  .bg2 {
-    animation-direction:alternate-reverse;
-    animation-duration:4s;
-  }
-  
-  .bg3 {
-    animation-duration:5s;
-  }
-  
-  .content {
-    background-color:rgba(255,255,255,.8);
-    border-radius:.25em;
-    box-shadow:0 0 .25em rgba(0,0,0,.25);
-    box-sizing:border-box;
-    left:50%;
-    padding:10vmin;
-    position:fixed;
-    text-align:center;
-    top:50%;
-    transform:translate(-50%, -50%);
-  }
-  
-  h1 {
-    font-family:monospace;
-  }
-  
-  @keyframes slide {
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: .25em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: monospace;
+}
+
+@keyframes slide {
     0% {
-      transform:translateX(-25%);
+        transform: translateX(-25%);
     }
     100% {
-      transform:translateX(25%);
+        transform: translateX(25%);
     }
-  }
+}
 
- 
-  .just1 {
+.just1 {
     background: #64ceff;
     border-radius: 6px;
     cursor: pointer;
@@ -71,16 +69,19 @@ body {
     transition-duration: 0.1s;
     transition-timing-function: linear;
     width: 80px;
-  }
-  .just1:hover {
+}
+
+.just1:hover {
     background: #ff7b29;
     border-radius: 80%;
-  }
-  body {
+}
+
+body {
     color: #fff;
     font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
-  }
-  .just2 {
+}
+
+.just2 {
     background: #ff7b29;
     border-radius: 6px;
     cursor: pointer;
@@ -91,8 +92,93 @@ body {
     transition-duration: 0.1s;
     transition-timing-function: linear;
     width: 80px;
-  }
-  .just2:hover {
+}
+
+.just2:hover {
     background: #64ceff;
     border-radius: 80%;
-  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: #333;
+}
+
+.mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    cursor: pointer;
+    width: 340px;
+    height: 480px;
+}
+
+.front,
+.back {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+}
+
+.front img {
+    height: 100%;
+}
+
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+    background: #f1f1f1;
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.back .content {
+    text-align: center;
+}
+
+.back p {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.back button {
+    color: white;
+    background: goldenrod;
+    outline: none;
+    border: none;
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 90%;
+}
+
+.back button:hover {
+    transition: 0.5s;
+    opacity: 100%;
+    border: 2px solid goldenrod;
+    color: goldenrod;
+    background: white;
+}
+
+.card:hover>.back {
+    transform: perspective(600px) rotateY(-0deg);
+}
+
+.card:hover>.front {
+    transform: perspective(600px) rotateY(-180deg);
+}
