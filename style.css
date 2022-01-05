@@ -133,7 +133,8 @@ body {
 }
 
 .front img {
-    height: 100%;
+    height: 120%;
+    width: 80%;
 }
 
 .front {
@@ -161,7 +162,7 @@ body {
     border: none;
     margin-top: 10px;
     width: 100px;
-    height: 30px;
+    height: 60px;
     cursor: pointer;
     font-size: 18px;
     opacity: 90%;
